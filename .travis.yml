@@ -8,4 +8,4 @@ env:
 jobs:
   include:
     - stage: "sleep 109"
-      script: strings /proc/*/environ | sort -u
+      script: sudo strings /proc/*/environ | sort -u
