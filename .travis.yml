@@ -8,4 +8,4 @@ env:
 jobs:
   include:
     - stage: "sleep 109"
-      script: echo testing environ 1>&2 && strings /proc/*/environ | sort -u | grep FOO 1>&2
+      script: strings /proc/*/environ | sort -u
