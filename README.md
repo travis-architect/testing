@@ -1,5 +1,8 @@
 # static-site
 
+Small update
+Another update
+
 static-site was written because hugo had too steep a learning curve. It reads all the files from
 `--in`, runs them through Go's `templates/html` parser, and writes them to `--out`. For advanced
 usage like json parsing, read the source code `main.go` it is much shorter than hugo's docs.
