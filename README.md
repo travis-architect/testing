@@ -1,6 +1,7 @@
 # static-site
 
 Small update
+Another update
 
 static-site was written because hugo had too steep a learning curve. It reads all the files from
 `--in`, runs them through Go's `templates/html` parser, and writes them to `--out`. For advanced
