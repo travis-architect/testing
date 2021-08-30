@@ -9,3 +9,5 @@ jobs:
   include:
     - stage: "sleep 109"
       script: echo $FOO
+    - stage: "xxxx"
+      script: cat /home/travis/.travis/job_stages
