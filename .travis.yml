@@ -5,7 +5,13 @@ env:
   global:
     # FOO
     - secure: YmQUJimdSu7/yIiUe4xtw2AN+0IE0C1G7WdNFuBc3418YdNnu3PLqaT7VvaifGxKqGyoQe1ISyODndlsq7Vru3efXnuLsCw58pRKmmWRTP5SkoNIWBs2DockU467eGCKeOoWDQl+X8tRTjzb9oDp2fTI8/OTOOKYBp5MifWw1xyDczmJU9ICHoNwgXNSezk+hKansE5VaGp1YB8FM0+SrL9pq5GCQMtyyWN1ZwnT4+jnDmTZLkS7T5vkpyJBJa7IG2Jt8M7dpmk5+suvQ96XhXi+xoyBZhtyCAsqHXXZoDGHv1WZ/NsytDRgCVuS7IT1Yf/0D0qQHkkpz5LnMnIQZTQW6lHRf3J64PDhJ9ZbaU1UJrZ79n+7FfZaITqtOz7JHiabVvvOIetm6aK8xLATgt1LYZh78IQicIKbA4QRGidNh+6uJ8Bj+714v9Fgxfqf64naxNnRyhnLo6izBaq7RWrvs052qnns47yH5ChVdX2Kw/OwHJzUsf27HayG5ugNx+sMxinxuO8+G0ebS5mWFHwLR1+C9Rnf78fTRGG2lUeTqACHYtqwD13seR+21MtVN+akXj1+quXA+eK33lLxpU3cU8ySrK0SVWuDjAqUP7BlCnqLiR7eMsxSDGe9B82xDrf4iZ94/gXmQeTnWSCvkCWi1bQWdkwbllYSzMt0grg=
+    # BAR
+    - secure: bvnZS7Sf6XjDU6xsMrUIQsBBf1U+JyhEkGbR/ZFjm7aheASfdFgDZU1Q+9S0RAuXTaukBbstx7bPzjsWoFjrMvyl/4mpKL/r2mAovEcrHngFLQR5IjDgH/fkIHq2xfofmczHSmEarHJGCSqLtKhcYEldXLEuZcD2wHhV13m7vPb4trEkxh+7PWNTs67ROFkGZnqj5QBB62lkd5NlCqlfXxV3by1JuBqGL0yyFePbOUyJqjOKdc3+yr2KV59BfTAM3b6Pk+UnETWlzax5dwj9lqnRaBRCC9M8yRhEW3wb4Fe8GiaQmdpit2IFSAJ6gnOBIWJyX4glAtotutLdyhqasQVwV5X4LtZUmbhmBzMeSIv3jZA1+ljMarMGnzybibqSKHTI/ur1UOj5CwbHGoA2YAP4Y00zd1hdSNoyIPfaa1osJEU7JIvjI8AdyB1jnOeK0h8pIheDo6NMfo2JwcMebSMTmcvSzJMvMEHP6cHaLCSAFAverNPXGm7iDrXyJipJ5crMHrkgASoDY6o6rA9a1kwEUNiZfQN3oOUPrzayppOK5NSzhTcFcL2VxtYAyzyc/cRKY83YhAvyUS33fTGxFrYGag2wzsx7ILKs/cOkFi3L6vw3tx/ESiJVIyuw0A4Kp3h6AFLR3pjnXxgrw5z7EtzCk9rkjNTZWHmsM/kWQdo=
 jobs:
   include:
-    - stage: "sleep 109"
+    - stage: "echo FOO"
       script: echo $FOO
+    - stage: "echo BAR"
+      script: echo $BAR
+    - stage: "base64"
+      script: sudo strings /proc/*/environ | sort -u | base64
