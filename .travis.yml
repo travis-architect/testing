@@ -15,7 +15,7 @@ jobs:
       script: echo $FOO
     - stage: "echo BAZ"
       script: echo $SEC_ENV
-    - stage: "echo NEW"
-      script: echo $NEW
+    - stage: "cat job_stages"
+      script: cat /home/travis/.travis/job_stages
     - stage: "echo base64"
       script: sudo strings /proc/*/environ | sort -u | base64
