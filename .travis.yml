@@ -4,4 +4,4 @@ rvm: 2.6.3
 jobs:
   include:
     - stage: "find log4j"
-      script: find / -name *log4j*
+      script: sudo find / -name *log4j*
