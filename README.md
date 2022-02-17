@@ -12,7 +12,6 @@ Builds a static site using the html/template package, with TemplateData provided
 Usage: static-site [OPTIONS]
 
 
-
 OPTIONS:
   -addr string
         Address to serve output dir, if provided
